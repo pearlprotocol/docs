@@ -1,5 +1,4 @@
 import type { DocsThemeConfig } from "nextra-theme-docs";
-import { useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -29,9 +28,9 @@ const config: DocsThemeConfig = {
     </>
   ),
   docsRepositoryBase:
-    "https://github.com/AnishDe12020/rayauth/tree/main/apps/docs",
+    "https://github.com/pearlprotocol/docs",
   project: {
-    link: "https://github.com/AnishDe12020/rayauth",
+    link: "https://github.com/pearlprotocol/",
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
@@ -41,8 +40,8 @@ const config: DocsThemeConfig = {
     text: (
       <span>
         {new Date().getFullYear()} ©{" "}
-        <a href="https://rayauth.com" target="_blank" rel="noreferrer">
-          RayAuth
+        <a href="https://docs.pearlx.com" target="_blank" rel="noreferrer">
+          Pearlx
         </a>
         .
       </span>

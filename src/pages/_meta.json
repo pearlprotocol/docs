@@ -3,14 +3,14 @@
         "title": "Introduction"
     },
     "architecture": "Architecture",
-    "react-sdk": "React SDK",
+
     "Support": {
         "title": "Support",
         "type": "separator"
     },
-    "twitter": {
-        "title": "Twitter ↗",
-        "href": "https://twitter.com/rayauthhq",
+    "github": {
+        "title": "Github ↗",
+        "href": "https://github.com/pearlprotocol/",
         "newWindow": true
     },
     "email": {
