@@ -3,6 +3,8 @@
         "title": "Introduction"
     },
     "architecture": "Architecture",
+    "sdk": "react-sdk",
+
 
     "Support": {
         "title": "Support",
