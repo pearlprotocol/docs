@@ -1,0 +1,108 @@
+# Installation
+
+To create a React application with @pearlx/react, you have the option to use one of three popular tools: Create React App (CRA), Vite, or Next.```js. To run @pearlx/react, it's important to have the latest LTS version of Node installed on your system.
+`@pearlx/react` is a library that provides an authentication provider for React applications. The PearlProvider component is used to wrap the main application component and provide authentication functionality.
+
+
+## Setup
+
+Installation
+
+To install @pearlx/react, run the following command:
+
+```bash
+npm install @pearlx/react
+
+pnpm install @pearlx/react
+
+yarn add @pearlx/react
+```
+
+
+## Usage
+
+To use @pearlx/react, first import the PearlProvider component from the library:
+
+```js
+import { PearlProvider } from "@pearlx/react";
+
+
+Next, wrap your main application component with the PearlProvider component, passing in the required config object:
+
+javascript
+<React.StrictMode>
+  <PearlProvider
+    config={{
+        callbackUrl: "http://localhost:8080",
+        clientId: "test123",
+        encrypt: true,
+        password: "apoorv1234",
+        provider: "DISCORD",
+        cookieName: "pearlx",
+        kyc: "GOVERNMENT"
+    }}
+  >
+    <App />
+  </PearlProvider>
+</React.StrictMode>
+```
+
+#### The config object must contain the following properties:
+
+`clientId`: The client ID for your Pearlx authentication application.
+`callbackUrl`: The callback URL to redirect to after authentication.
+`provider`: The authentication provider to use (e.g. Google, Facebook, etc.).
+`cookieName`: The name of the cookie to use for authentication.
+
+#### Configuring the Provider
+
+The PearlProvider component takes a config object as a prop, which must include the properties mentioned above. Here's what each of them means:
+
+`clientId`: Your Pearlx authentication client ID, which you can obtain from the Pearlx authentication dashboard.
+
+`callbackUrl`: The URL that Pearlx should redirect the user to after authentication is complete. This URL must be listed as an authorized redirect URI in your Pearlx authentication dashboard.
+
+`provider`: The authentication provider to use. This can be one of the following values from the providers enum:
+providers.google
+providers.discord
+providers.github
+
+`cookieName`: The name of the cookie that will be set upon successful authentication.
+
+`password`: The hash of the password that will be used to encrypt the key.
+
+`encrypt`: Whether to encrypt the key or not.
+
+`kyc`: The KYC provider to use. This can be one of the following values from the kyc enum:
+kyc.government
+kyc.document
+
+
+
+#### Using the Provider
+
+Once you've configured the provider, you can use the provider in root of your project.
+
+##### Example
+
+```ts 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { PearlProvider, providers } from "@pearlx/react";
+import App from "./App";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <PearlProvider
+      config={{
+        clientId: "63fc80e8da0cb8775e46fc73",
+        callbackUrl: "http://localhost:5173",
+        provider: providers.google,
+        cookieName: "cookieName"
+      }}
+    >
+      <App />
+    </PearlProvider>
+  </React.StrictMode>
+);
+```
